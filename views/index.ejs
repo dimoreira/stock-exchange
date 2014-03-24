@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Nockmarket</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://spbooks.github.com/nodejs1/docs.css" rel="stylesheet">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+	<script src="http://spbooks.github.io/nodejs1/jquery.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="/js/nockclient.js"></script>
+</head>
+<body>
+	<!-- Signup Modal -->
+	<div id="myModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form id="signup-form" action="/signup" method="post" class="form-horizontal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+						<h3>Sign Up Today</h3>
+					</div>
+					<div class="modal-body">
+						<fieldset>
+							<div class="form-group">
+								<div class="col-md-12">
+									<input type="text" name="username" placeholder="Username" class="form-control uname">
+									<span id="imagePlaceholder"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-12">
+									<input type="text" name="email" placeholder="Email" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-12">
+									<input type="password" name="password" placeholder="Password" class="form-control">
+								</div>
+							</div>
+						</fieldset>
+					</div>
+					<div class="modal-footer">
+						<a href="#" data-dismiss="modal" class="btn btn-default">Close</a>
+						<button class="btn btn-primary create-button" type="submit">Create Account</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- end Signup Modal -->
+
+	<!-- Login Modal -->
+	<div id="loginModal" class="modal fade smallModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form id="login-form" action="/login" method="post" class="form-horizontal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+						<h3>Sign Up Today</h3>
+					</div>
+					<div class="modal-body">
+						<fieldset>
+							<div class="form-group">
+								<div class="col-md-12">
+									<input type="text" name="username" placeholder="Username" class="form-control uname">
+									<span id="imagePlaceholder"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-12">
+									<input type="password" name="password" placeholder="Password" class="form-control">
+								</div>
+							</div>
+						</fieldset>
+					</div>
+					<div class="modal-footer">
+						<a href="#" data-dismiss="modal" class="btn btn-default">Close</a>
+						<button class="btn btn-primary" type="submit">Log In</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- end Login Modal -->
+	<div class="container">
+		<div class="marketing">
+			<h1>Nockmarket</h1>
+			<p class="marketing-byline">Welcome to the Node.js stockmarket</p>
+			<div class="row col-md-offset-2">
+				<div class="col-md-4">
+					<i class="glyphicon glyphicon-book"></i>
+					<h2>Real Prices</h2>
+					<p>Here you will be able to sign up for an account and create a stock portfolio with live prices. This will combine the beauty of Bootstrap with the performance of Node.js to create a well designed, blazing fast stock tracking tool.</p>
+				</div>
+				<div class="col-md-4">
+					<i class="glyphicon glyphicon-stats"></i>
+					<h2>Live Data</h2>
+					<p>We will also construct a dummy portfolio to show you how to stream real-time data straight into your browser. Once you have mastered the basics you will be able to stram any type of data from tweets, to chat to auction data.</p>
+				</div>
+			</div>
+		</div>
+		<header class="jumbotron masthead">
+			<div class="inner">
+				<p class="download-info">
+					<a data-toggle="modal" href="#loginModal" class="btn btn-default btn-large">Log In</a>
+					<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-large">Sign Up</a>
+				</p>
+			</div>
+		</header>
+	</div>
+</body>
+</html>

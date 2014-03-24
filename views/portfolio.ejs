@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Nockmarket</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://spbooks.github.com/nodejs1/docs.css" rel="stylesheet">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+	<script src="http://spbooks.github.io/nodejs1/jquery.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="/js/portfolio.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/js/chat.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-offset-2 col-md-8">
+				<h3>Welcome to the Nockmarket</h3>
+				<p>Here you can manage your portfolio and view live prices.</p>
+				<div class="tabbable" style="margin-bottom: 18px;">
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a href="#tab1" data-toggle="tab">Portfolio</a>
+						</li>
+						<li>
+							<a href="#tab2" data-toggle="tab">Nockmarket</a>
+						</li>
+						<li>
+							<a href="#tab3" data-toggle="tab" id="chat-tag">Chat</a>
+						</li>
+					</ul>
+					<div class="tab-content" style="padding-bottom: 9px; border-bottom: 1px solid #ddd;">
+						<div class="tab-pane active" id="tab1">
+							<div class="well form-search">
+								<input id="stock" type="text" class="search-query" name="stock">
+								<button id="add-stock" class="btn btn-default">Add Stock</button>
+							</div>
+						<table class="table table-striped table-bordered table-condensed">
+							<thead>
+								<tr>
+									<th>Stock Code</th>
+									<th>Last Price</th>
+								</tr>
+							</thead>
+							<tbody class="stock-list">
+								<% for (var i=0; i < portfolio.length; i++) { %>
+									<tr>
+										<td><%= portfolio[i] %></td>
+										<td><%= prices[i] %></td>
+									</tr>
+								<% } %>
+							</tbody>
+						</table>
+					</div>
+					<div class="tab-pane" id="tab2">
+						<p>Howdy, I'm in Section 2.</p>
+					</div>
+					<div class="tab-pane" id="tab3">
+						<p>
+							<button class="btn btn-info btn-large" type="button" id="join-chat">Join Chat</button>
+						</p>
+						<div class="form-group" style="margin-top: 20px;">
+							<textarea class="form-control chat-widget" id="textarea" rows="20"></textarea>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control chat-widget" id="input01" placeholder="Enter your message">
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary chat-widget" id="send-chat">Send</button>
+						</div>
+						<div class="form-group">
+							<span class="label label-default chat-widget" id="online">Online:</span>
+							<div id="users"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
